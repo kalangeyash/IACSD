@@ -1,0 +1,43 @@
+C++ Variables, Literals and Constants
+C++ Variables
+In programming, a variable is a container (storage area) to hold data.
+
+To indicate the storage area, each variable should be given a unique name (identifier). For example,
+int age = 14;
+Here, age is a variable of the int data type, and we have assigned an integer value 14 to it.
+
+The int data type suggests that the variable can only hold integers. Similarly, we can use the double data type if we have to store decimals and exponentials.
+
+Rules for naming a variable
+A variable name can only have alphabets, numbers, and the underscore _.
+A variable name cannot begin with a number.
+It is a preferred practice to begin variable names with a lowercase character. For example, name is preferable to Name.
+A variable name cannot be a keyword. For example, int is a keyword that is used to denote integers.
+A variable name can start with an underscore. However, it's not considered a good practice.
+
+
+C++ Fundamental Data Types
+Data Type	Meaning			Size (in Bytes)
+int	        Integer			2 or 4
+float		Floating-point		4
+double		Double Floating-point	8
+char		Character		1
+wchar_t		Wide Character		2
+bool		Boolean			1
+void		Empty			0
+
+
+1. C++ int
+The int keyword is used to indicate integers.
+Its size is usually 4 bytes. Meaning, it can store values from -2147483648 to 2147483647.
+For example,
+int salary = 85000;
+
+2. C++ float and double
+float and double are used to store floating-point numbers (decimals and exponentials).
+The size of float is 4 bytes and the size of double is 8 bytes. Hence, double has two times the precision of float. To learn more, visit C++ float and double.
+For example,
+float area = 64.74;
+double volume = 134.64534;
+
+

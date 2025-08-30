@@ -1,0 +1,57 @@
+What is C++?
+C++ is an object-oriented programming (OOP) language that is viewed by many as the best language for creating large-scale applications. C++ is a superset of the C language.
+
+C++ allows software developers to define their own data types and manipulate them using functions and methods. It also allows low-level programming and provides access to memory, enabling fast and efficient execution of code. It also supports generic programming using templates, which let code be written in a generic form and reused for different data types.
+
+C++ is a general-purpose, object-oriented programming language that was designed by Bjarne Stroustrup in 1979 to be an extension of the C language. It has the features of imperative, object-oriented as well as generic programming models.
+
+
+*Features Of C++:
+1)Object-oriented: 
+C++ is an object-oriented programming language. This means that the focus is on “objects” and manipulations around these objects. Information about how these manipulations work is abstracted out from the consumer of the object.
+
+2)Rich library support:
+ Through C++ Standard Template Library (STL) many functions are available that help in quickly writing code. For instance, there are standard libraries for various containers like sets, maps, hash tables, etc.
+
+3)Speed: C++ is the preferred choice when latency is a critical metric. The compilation, as well as the execution time of a C++ program, is much faster than most other general purpose programming languages.
+4)Compiled: A C++ code has to be first compiled into low-level code and then executed, unlike interpreted programming languages where no compilation is needed.
+
+5)Pointer Support: C++ also supports pointers which are widely used in programming and are often not available in several programming languages.
+
+6)Memory Management
+C++ allows us to allocate the memory of a variable or an array in run time. This is known as Dynamic Memory Allocation.
+In other programming languages such as Java and Python, the compiler automatically manages the memories allocated to variables. But this is not the case in C++.
+In C++, the memory must be de-allocated dynamically allocated memory manually after it is of no use.
+The allocation and deallocation of the memory can be done using the new and delete operators respectively.
+
+
+
+
+
+Writing Cpp program:
+// C++ program to display "Hello World"
+// Header file for input output functions
+#include <iostream>
+using namespace std;
+// Main() function: where the execution of
+// program begins
+int main(){
+    // Prints hello world
+    cout << "Hello World"; 
+    return 0;
+}
+
+note:
+
+“using namespace std” means we use the namespace named std. 
+“std” is an abbreviation for standard.
+ So that means we use all the things with in “std” namespace.
+ If we don’t want to use this line of code, we can use the things in this namespace like this. std::cout, std::endl.
+
+What is cin and cout?
+
+*cin is an object of the input stream and is used to take input from input streams like files, console, etc. 
+*cout is an object of the output stream that is used to show output. Basically, cin is an input statement while cout is an output statement.
+
+They also use different operators. cin uses the insertion operator( >> ) while cout uses the extraction operator( << ).
+

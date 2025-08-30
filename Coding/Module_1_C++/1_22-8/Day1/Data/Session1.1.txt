@@ -1,0 +1,164 @@
+What is a Token in C++
+What is a token?
+A C++ program is composed of tokens which are the smallest individual unit. Tokens can be one of several things, including keywords, identifiers, constants, operators, or punctuation marks.
+
+There are 6 types of tokens in c++:
+
+Keyword
+Identifiers
+Constants
+Strings
+Special symbols
+Operators
+
+*1. Keywords:
+In C++, keywords are reserved words that have a specific meaning in the language and cannot be used as identifiers. Keywords are an essential part of the C++ language and are used to perform specific tasks or operations.
+Note:If you try to use a reserved keyword as an identifier, the compiler will produce an error because it will not know what to do with the keyword.
+
+*2. Identifiers
+In C++, an identifier is a name given to a variable, function, or another object in the code. Identifiers are used to refer to these entities in the program, and they can consist of letters, digits, and underscores. However, some rules must be followed when choosing an identifier:
+
+The first character must be a letter or an underscore.
+Identifiers cannot be the same as a keyword.
+Identifiers cannot contain any spaces or special characters except for the underscore.
+Identifiers are case-sensitive, meaning that a variable named "myVariable" is different from a variable named "myvariable".
+Here are some examples of valid and invalid identifiers in C++:
+
+Valid:
+my_variable
+student_name
+balance_due
+
+Invalid:
+my variable (contains a space)
+student# (contains a special character)
+int (same as a keyword)
+It's important to choose meaningful and descriptive names for your identifiers to make your code easier to read and understand.
+
+*3. Constants
+In C++, a constant is a value that cannot be changed during the execution of the program. Constants often represent fixed values used frequently in the code, such as the value of pi or the maximum size of an array.
+
+To define a constant in C++, you use the const keyword followed by the data type and the constant's name and then initialize it with a value. The value of a constant cannot be changed once it has been defined. Here is an example:
+
+const double PI = 3.14159;  
+In this example, the constant PI is of type double and is initialized with the value of pi. You can then use the constant PI in your code wherever you need to use the value of pi.
+
+
+*4. String:
+In C++, a string is a sequence of characters that represents text. Strings are commonly used in C++ programs to store and manipulate text data.
+
+To use strings in C++, you must include the <string> header file at the beginning of your program. This will provide access to the string class, which is used to create and manipulate strings in C++. 
+
+*5. Special symbols:
+In C++, several special symbols are used for various purposes. 
+1:The ampersand (&) is used to represent the address of a variable, while the tilde (~) is used to represent the bitwise NOT operator. Some of the most common special symbols include the asterisk (*), used as the multiplication and pointer operators.
+2:The pound sign (#) is used to represent the preprocessor directive, a special type of instruction processed by the preprocessor before the code is compiled. The percent sign (%) is used as the modulus operator, which is used to find the remainder when one number is divided by another.
+3:The vertical bar (|) is used to represent the bitwise OR operator, while the caret (^) is used to represent the bitwise XOR operator. The exclamation point (!) is used to represent the logical NOT operator, which is used to negate a Boolean value.
+
+In addition to these symbols, C++ also has a number of other special characters that are used for a variety of purposes. For example, the backslash (/) is used to escape special characters, the double quotes (") are used to enclose string literals, and the single quotes (') are used to enclose character literals.
+
+Overall, the special symbols in C++ are an important part of the language and are used in a variety of different contexts to perform a wide range of operations.
+
+*6. Operators:
+In C++, operators are special symbols that are used to perform operations on one or more operands. An operand is a value on which an operator acts. C++ has a wide range of operators, including arithmetic operators, relational operators, logical operators, and others.
+
+Arithmetic operators are used to perform mathematical operations such as addition, subtraction, multiplication, and division. Some examples of arithmetic operators include + (used for addition), - (used for subtraction), * (used for multiplication), and / (used for division).
+
+Relational operators are used to compare two values and determine their relationship. Some examples of relational operators include == (used to check for equality), != (used to check for inequality), > (used to check if a value is greater than another), and < (used to check if a value is less than another).
+
+Logical operators are used to combine two or more relational expressions and determine their logical relationship. Some examples of logical operators include && (used for the logical AND operation), || (used for the logical OR operation), and ! (used for the logical NOT operation).
+
+In addition to these operators, C++ also has a number of other operators that are used for different purposes. For example, the bitwise operators are used to perform bitwise operations on individual bits of a value, and the assignment operators are used to assign a value to a variable.
+
+Overall, operators are an essential part of C++ and are used to perform a wide range of operations in a program.
+
+
+
+
+Variable initialization in C++
+Variables are the names given by the user. A datatype is also used to declare and initialize a variable which allocates memory to that variable. There are several datatypes like int, char, float etc. to allocate the memory to that variable.
+
+There are two ways to initialize the variable. One is static initialization in which the variable is assigned a value in the program and another is dynamic initialization in which the variables is assigned a value at the run time.
+
+The following is the syntax of variable initialization.
+
+datatype variable_name = value;
+Here,
+
+datatype − The datatype of variable like int, char, float etc.
+
+variable_name − This is the name of variable given by user.
+
+The following is an example of variable initialization.
+
+Example
+ Live Demo
+
+#include <iostream>
+using namespace std;
+int main() {
+   int a = 20;
+   int b;
+   cout << "The value of variable a : "<< a; // static initialization
+   cout << "\nEnter the value of variable b : "; // dynamic initialization
+   cin >> b;
+   cout << "\nThe value of variable b : "<< b;
+   return 0;
+}
+Output
+The value of variable a : 20
+Enter the value of variable b : 28
+The value of variable b : 28
+
+
+Data Types in C++
+
+All variables use data type during declaration to restrict the type of data to be stored. Therefore, we can say that data types are used to tell the variables the type of data they can store. Whenever a variable is defined in C++, the compiler allocates some memory for that variable based on the data type with which it is declared. Every data type requires a different amount of memory. 
+
+C++ supports a wide variety of data types and the programmer can select the data type appropriate to the needs of the application. Data types specify the size and types of values to be stored. However, storage representation and machine instructions to manipulate each data type differ from machine to machine, although C++ instructions are identical on all machines.
+
+Data Types in C++ are Mainly Divided into 3 Types: 
+1. Primitive Data Types: These data types are built-in or predefined data types and can be used directly by the user to declare variables. example: int, char, float, bool, etc. Primitive data types available in C++ are: 
+Integer
+Character
+Boolean
+Floating Point
+Double Floating Point
+Valueless or Void
+Wide Character
+2. Derived Data Types: Derived data types that are derived from the primitive or built-in datatypes are referred to as Derived Data Types. These can be of four types namely: 
+
+Function
+Array
+Pointer
+Reference
+3. Abstract or User-Defined Data Types: Abstract or User-Defined data types are defined by the user itself. Like, defining a class in C++ or a structure. C++ provides the following user-defined datatypes:  
+
+Class
+Structure
+Union
+Enumeration
+Typedef defined Datatype
+Primitive Data Types
+Integer: The keyword used for integer data types is int. Integers typically require 4 bytes of memory space and range from -2147483648 to 2147483647.  
+Character: Character data type is used for storing characters. The keyword used for the character data type is char. Characters typically require 1 byte of memory space and range from -128 to 127 or 0 to 255.  
+Boolean: Boolean data type is used for storing Boolean or logical values. A Boolean variable can store either true or false. The keyword used for the Boolean data type is bool. 
+Floating Point: Floating Point data type is used for storing single-precision floating-point values or decimal values. The keyword used for the floating-point data type is float. Float variables typically require 4 bytes of memory space. 
+Double Floating Point: Double Floating Point data type is used for storing double-precision floating-point values or decimal values. The keyword used for the double floating-point data type is double. Double variables typically require 8 bytes of memory space. 
+void: Void means without any value. void data type represents a valueless entity. A void data type is used for those function which does not return a value. 
+Wide Character: Wide character data type is also a character data type but this data type has a size greater than the normal 8-bit data type. Represented by wchar_t. It is generally 2 or 4 bytes long.
+sizeof() operator: sizeof() operator is used to find the number of bytes occupied by a variable/data type in computer memory.
+Example:
+
+int m , x[50];     
+
+cout<<sizeof(m); //returns 4 which is the number of bytes occupied by the integer variable “m”.  
+
+cout<<sizeof(x); //returns 200 which is the number of bytes occupied by the integer array variable “x”.     
+
+The size of variables might be different from those shown in the above table, depending on the compiler and the computer you are using.
+
+
+
+
+
