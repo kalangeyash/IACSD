@@ -1,0 +1,37 @@
+Do complete these pre requisites , before beginning of the Java module
+
+Java Installation 
+
+1. JDK 21 download
+For windows users , Use supplied 
+- jdk-21_windows-x64_bin.exe
+
+OR for different platform
+- https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html
+(Create free Oracle account if required)
+
+2 Edit system  environment variable path,
+to set <JDK21>/bin as it's 1st entry.
+
+
+3. Open command prompt or terminal
+Type
+java -version
+It should show you : java version 21
+
+
+4. Java IDE download (STS 4 - Eclipse IDE with Spring Tools)
+
+For windows users , Use supplied 
+.sts-4.30.0.RELEASE.7z
+Extract it to a drive , with writing permissions
+
+OR 
+for different platform
+https://spring.io/tools (choose platform)
+Later in web Java module - refer to
+"Adding web developer tools in STS 4.txt"s
+
+5. Download & extract 
+ - core java common help\api docs\jdk-21.0.7_doc-all.zip
+
