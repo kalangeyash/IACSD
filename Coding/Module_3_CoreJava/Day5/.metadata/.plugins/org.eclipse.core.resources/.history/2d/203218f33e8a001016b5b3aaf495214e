@@ -1,0 +1,18 @@
+package com.tester;
+import static java.lang.System.*;
+
+import java.util.Scanner;
+import com.student.*;
+import com.faculty.*;
+import com.person.*;
+
+
+public class Tester {
+
+	public static void main(String[]args)
+	{
+		
+
+		
+	}
+}
