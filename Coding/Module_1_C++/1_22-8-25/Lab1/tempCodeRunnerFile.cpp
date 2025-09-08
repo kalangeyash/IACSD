@@ -1,0 +1,1 @@
+Sum of all even numbers are:
