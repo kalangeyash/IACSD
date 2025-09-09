@@ -1,0 +1,20 @@
+package com.tester;
+import java.util.*;
+
+public class MyString {
+	
+
+	public static void main(String[] args) {
+		String s1 = new String("yash");
+		
+		StringBuilder s2  = new StringBuilder();
+		System.out.println(s2+"nul");
+		s2.append("yashkalange");
+		System.out.println(s1);
+		System.out.println(s2);
+		s1 = s1+s2;
+		System.out.println(s1);
+
+	}
+
+}

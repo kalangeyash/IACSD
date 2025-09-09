@@ -1,0 +1,21 @@
+package com.tester;
+import java.util.*;
+
+public class MyString {
+	
+
+	public static void main(String[] args) {
+		String s1 = new String("yash");
+		
+		StringBuilder s2  = new StringBuilder();
+		StringBuilder s3  = new StringBuilder();
+		s3.append("yashkalange");
+		s2.append("yashkalange");
+		System.out.println(s3.equals(s2));
+	
+		
+		
+
+	}
+
+}
