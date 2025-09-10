@@ -32,17 +32,18 @@ public class CurrentAccount extends BankAccount {
 //		return getBalance();
 //	}
 //	
+	@Override
 	public double withdraw(double amount) {
 	    double balance = getBalance();
-	    if ((balance - amount) < -overdraftLimit) // b - 1000 amount 2000 | overlimit-500   | -1000 <-500 
+	    if ((balance - amount) < - overdraftLimit) // b - 1000 amount 2000 | overlimit-500   | -1000 < -500 
 	    {
 	        System.out.println("Amount exceeding balance and overdraft limit");
-	        return -1;
+	        return getBalance();
 	    } else {
 	        balance -= amount;
 	        setBalance(balance);
+	        return getBalance() ;
 	    }
-	    return getBalance();
 	}
 
 	public double getOverdraftLimit() {

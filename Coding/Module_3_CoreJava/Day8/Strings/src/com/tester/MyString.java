@@ -33,7 +33,7 @@ public class MyString {
 		System.out.println(sb3.equals(sb4));//f - since StringBuilder class 
 		//HAS NOT overridden equals method , so uses the inherited version
 		
-		
+	
 
 	}
 

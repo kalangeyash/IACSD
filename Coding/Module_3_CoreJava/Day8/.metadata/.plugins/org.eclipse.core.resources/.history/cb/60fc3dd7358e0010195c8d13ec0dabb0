@@ -1,0 +1,17 @@
+package com.bank.exception;
+
+import com.accounts.BankAccount;
+
+public class InsufficientBalanceException extends Exception {
+	public InsufficientBalanceException(String errMessage) {
+		super(errMessage);
+	}
+	
+	public static void checkBalance(double amt,BankAccount[] arr,int idx) throws InsufficientBalanceException
+	{
+		if(arr[idx].getBalance() < amt)
+		{
+			throw new InsufficientBalanceException("You have insufficient Balance in your account");
+		}
+	}
+}

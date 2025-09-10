@@ -1,0 +1,180 @@
+package com.tester;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+import com.accounts.*;
+import com.bank.exception.SameAccountNumberException;
+
+/*try (Scanner sc=new Scanner(...)) {
+  1. array init (Data structure init)
+  2. counter , exit =false
+  while(!exit)
+  {
+    sop(options);
+    try {
+      switch-case
+    } catch-all
+  }
+}*/
+public class KJSBTester {
+	public static void main(String[] args) {
+		
+		try(Scanner sc = new Scanner(System.in))
+		{
+			System.out.println("Enter bank size");
+			int n = sc.nextInt();
+			BankAccount[] b = new BankAccount[n];
+			
+			boolean exit = false;
+			int idx = 0;
+			
+			while(!exit) {
+				System.out.println("Welcome to KJSB\n\t1.Create Saving Account\n\t2.Create Current Account\n\t3.Check balance\n\t4.Withdraw\n\t5.Display\nEnter choice");
+				try {
+					switch(sc.nextInt())
+					{
+						case 0:
+						    exit = true;
+						    System.out.println("Exiting...");
+						    break;
+						case 1:
+						    if (idx >= b.length) {
+						        System.out.println("Bank is full! Cannot add more accounts.");
+						        break;
+						    }
+						    System.out.println("Enter user details for Saving Acc");
+						    System.out.println("\n\tAccount Number : ");
+						    int n1 = sc.nextInt();
+
+						    
+						    BankAccount tempSavAcc = new SavingAccount(n1, 0, "", "", 0, 0);  
+
+							   
+						    boolean existsSaving = false;
+						    for (int i = 0; i < idx; i++) {
+						        if (b[i].equals(tempSavAcc)) { 
+						            existsSaving = true;
+						            break;
+						        }
+						    }
+
+						    if (existsSaving == true) {
+						        System.out.println("Account number with " + n1 + " already exists as Current Account. Cannot create duplicate.");
+						        break;
+						    }
+
+						    System.out.println("\n\tBalance  : ");
+						    double n2 = sc.nextDouble();
+						    System.out.println("\n\tName  : ");
+						    String n3 = sc.next();
+						    System.out.println("\n\tPhone  : ");
+						    String n4 = sc.next();
+						    System.out.println("\n\tRate Of Interest : ");
+						    float n5 = sc.nextFloat();
+						    System.out.println("\n\tMinimum Balance  : ");
+						    double n6 = sc.nextDouble();
+
+						    b[idx] = new SavingAccount(n1, n2, n3, n4, n5, n6);
+						    idx++;
+						    System.out.println("\n\t\t____Done___ ");
+						    break;
+						case 2:
+							if (idx >= b.length) {
+							    System.out.println("Bank is full! Cannot add more accounts.");
+							    break;
+							}
+							System.out.println("Enter user details for Current Acc");
+							System.out.println("\n\tAccount Number : ");
+							int m1 = sc.nextInt();
+						    BankAccount tempCurAcc = new CurrentAccount(m1, 0, "", "", 0);  
+
+							   
+						    boolean existsCurrent = false;
+						    for (int i = 0; i < idx; i++) {
+						        if (b[i].equals(tempCurrAcc)) { 
+						            existsCurrent = true;
+						            break;
+						        }
+						    }
+
+						    if (existsSaving == true) {
+						        System.out.println("Account number with " + m1 + " already exists as Current Account. Cannot create duplicate.");
+						        break;
+						    }
+//							SameAccountNumberException.checkAccNum(m1, b, idx);
+							System.out.println("\n\tBalance  : ");
+							double m2 = sc.nextDouble();
+							System.out.println("\n\tName  : ");
+							String m3 = sc.next();
+							System.out.println("\n\tPhone  : ");
+							String m4 = sc.next();
+							System.out.println("\n\tOvewrDraft Limit  : ");
+							double m5 = sc.nextDouble();
+			
+							b[idx] = new CurrentAccount(m1,m2,m3,m4,m5);
+							idx++;
+							System.out.println("\n\t\t____Done___ ");
+							break;
+							
+						case 3:
+						    System.out.println("Enter account number to check balance: ");
+						    int accNum = sc.nextInt();
+						    boolean found = false;
+						    for (int i = 0; i < idx; i++) {
+						        if (b[i].getAccountNumber() == accNum) {
+						            System.out.println("Balance for account " + accNum + " is " + b[i].getBalance());
+						            found = true;
+						            break;
+						        }
+						    }
+						    if (!found) {
+						        System.out.println("Account not found!");
+						    }
+						    break;
+						    
+						case 4:
+						    System.out.println("Enter account number for withdrawal:");
+						    int accNumW = sc.nextInt();
+						    System.out.println("Enter amount to withdraw:");
+						    double amount = sc.nextDouble();
+						    boolean foundWithdraw = false;
+						    for (int i = 0; i < idx; i++) {
+						        if (b[i].getAccountNumber() == accNumW) {
+						            double bal = b[i].withdraw(amount);
+						            if (bal >= 0) {
+						                System.out.println("Withdrawal successful. New balance: " + bal);
+						            } else {
+						                System.out.println("Withdrawal failed.");
+						            }
+						            foundWithdraw = true;
+						            break;
+						        }
+						    }
+						    if (!foundWithdraw) {
+						        System.out.println("Account not found!");
+						    }
+						    break;
+						case 5:
+						    for (int i = 0; i < idx; i++) {
+						        System.out.println(b[i]);
+						    }
+						    break;
+						default:
+							System.out.println("Invalid choice");
+
+							
+						
+						
+					}
+				}catch(InputMismatchException e)
+				{
+					System.err.println("Error : " + e.getMessage() );
+				}
+				catch(SameAccountNumberException e)
+				{
+					System.err.println("Error : " + e.getMessage());
+				}
+			}
+		}
+		
+	}
+}

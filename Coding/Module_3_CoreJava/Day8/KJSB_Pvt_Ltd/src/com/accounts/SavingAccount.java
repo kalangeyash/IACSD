@@ -29,11 +29,11 @@ public class SavingAccount extends BankAccount {
 	    double balance = getBalance();
 	    if (amount > balance) {
 	        System.out.println("Insufficient funds.");
-	        return -1;
+	        return getBalance();
 	    }
 	    if ((balance - amount) < minBal) {  // 1000 - 300 < 800  | 700<800
 	        System.out.println("Cannot withdraw beyond minimum balance requirement.");
-	        return -1;
+	        return getBalance();
 	    }
 	    balance -= amount;
 	    setBalance(balance);

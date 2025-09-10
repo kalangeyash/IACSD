@@ -45,20 +45,20 @@ public class KJSBTester {
 						    System.out.println("\n\tAccount Number : ");
 						    int n1 = sc.nextInt();
 
-						    // Create a temp BankAccount to compare
-						    BankAccount tempAcc = new BankAccount(n1, 0, "", "");  // dummy balance, name, phone
+						    
+						    BankAccount tempSavAcc = new SavingAccount(n1, 0, "", "", 0, 0);  
 
-						    // Check for duplicate account numbers
-						    boolean exists = false;
+							   
+						    boolean existsSaving = false;
 						    for (int i = 0; i < idx; i++) {
-						        if (b[i].equals(tempAcc)) {  // uses overridden equals()
-						            exists = true;
+						        if (b[i].equals(tempSavAcc)) { 
+						            existsSaving = true;
 						            break;
 						        }
 						    }
 
-						    if (exists) {
-						        System.out.println("Account number " + n1 + " already exists. Cannot create duplicate.");
+						    if (existsSaving == true) {
+						        System.out.println("Account number with " + n1 + " already exists . Cannot create duplicate.");
 						        break;
 						    }
 
@@ -85,7 +85,22 @@ public class KJSBTester {
 							System.out.println("Enter user details for Current Acc");
 							System.out.println("\n\tAccount Number : ");
 							int m1 = sc.nextInt();
-							SameAccountNumberException.checkAccNum(m1, b, idx);
+						    BankAccount tempCurAcc = new CurrentAccount(m1, 0, "", "", 0);  
+
+							   
+						    boolean existsCurrent = false;
+						    for (int i = 0; i < idx; i++) {
+						        if (b[i].equals(tempCurAcc)) { 
+						            existsCurrent = true;
+						            break;
+						        }
+						    }
+
+						    if (existsCurrent == true) {
+						        System.out.println("Account number with " + m1 + " already exists . Cannot create duplicate.");
+						        break;
+						    }
+//							SameAccountNumberException.checkAccNum(m1, b, idx);
 							System.out.println("\n\tBalance  : ");
 							double m2 = sc.nextDouble();
 							System.out.println("\n\tName  : ");
@@ -125,11 +140,7 @@ public class KJSBTester {
 						    for (int i = 0; i < idx; i++) {
 						        if (b[i].getAccountNumber() == accNumW) {
 						            double bal = b[i].withdraw(amount);
-						            if (bal >= 0) {
-						                System.out.println("Withdrawal successful. New balance: " + bal);
-						            } else {
-						                System.out.println("Withdrawal failed.");
-						            }
+						            System.out.println("Balance after Transaction : " + bal);
 						            foundWithdraw = true;
 						            break;
 						        }
@@ -154,10 +165,10 @@ public class KJSBTester {
 				{
 					System.err.println("Error : " + e.getMessage() );
 				}
-				catch(SameAccountNumberException e)
-				{
-					System.err.println("Error : " + e.getMessage());
-				}
+//				catch(SameAccountNumberException e)
+//				{
+//					System.err.println("Error : " + e.getMessage());
+//				}
 			}
 		}
 		

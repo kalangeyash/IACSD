@@ -27,6 +27,7 @@ public class BankAccount {
 		this.name = name;
 		this.phoneNo = phoneNo;
 	}
+
 	
 	void deposit(double amount)
 	{
@@ -67,16 +68,25 @@ public class BankAccount {
 	public String toString() {
 	    return "Account Number: " + accountNumber + ", Name: " + name + ", Balance: " + balance;
 	}
+//	@Override
+//	public boolean equals(Object obj )
+//	{
+//		if(this == obj)	return true;
+//		if (obj == null) return false;
+//		if (getClass() != obj.getClass()) return false;
+//		
+//		
+//		BankAccount a = (BankAccount) obj;
+//		return this.accountNumber == a.accountNumber;
+//	}
+//	
 	@Override
-	public boolean equals(Object obj )
+	public boolean equals(Object o)
 	{
-		if(this == obj)	return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		
-		BankAccount a = (BankAccount) obj;
+		BankAccount a = (BankAccount) o;
 		return this.accountNumber == a.accountNumber;
 	}
+	
 //	b1.equal(b2);
 	
 }
