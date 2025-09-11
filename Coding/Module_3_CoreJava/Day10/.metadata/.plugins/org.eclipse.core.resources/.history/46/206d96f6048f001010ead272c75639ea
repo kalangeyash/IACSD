@@ -1,0 +1,13 @@
+package com.stringtest;
+
+public class Stringhandle {
+
+	public static void main(java.lang.String[] args) {
+		String str1="fghniksoijsidj";
+		String str2="nik";
+		System.out.println();
+		
+
+	}
+
+}

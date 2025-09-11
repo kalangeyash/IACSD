@@ -1,0 +1,29 @@
+package com.bank.service;
+import com.bank.core.*;
+
+public class BankImplementation implements BankINF {
+	private int counter;
+	private Bank[] users;
+	
+
+	@Override
+	public String registerUser(int accountNumber, double balance, String name, String phoneNo) {
+		 Bank u = new Bank(accountNumber,balance,name,phoneNo);
+		 
+		 users[counter] = u;
+		 counter++;
+		 
+		 return "User Registred to bank";
+		
+	 }
+	
+	@Override
+	public void displayAllUsers(Bank[] users){
+		for(Bank obj : users)
+		{
+			System.out.println(obj);
+		}
+	}
+	
+	
+}

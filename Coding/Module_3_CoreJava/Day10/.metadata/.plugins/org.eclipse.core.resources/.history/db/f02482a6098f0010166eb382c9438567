@@ -1,0 +1,9 @@
+package com.bank.service;
+import com.bank.core.*;
+
+public interface BankINF {
+
+	public String registerUser(int accountNumber, double balance, String name, String phoneNo);
+	
+	public void displayAllUsers(Bank[] users);
+}

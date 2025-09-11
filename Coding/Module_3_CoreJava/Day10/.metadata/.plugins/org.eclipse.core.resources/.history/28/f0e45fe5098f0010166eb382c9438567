@@ -1,0 +1,16 @@
+package com.bank.service;
+import com.bank.core.*;
+
+public class BankService implements BankINF {
+	private int counter;
+	private Bank[] users;
+	
+
+
+	public String registerUser(int accountNumber, double balance, String name, String phoneNo) {
+		 Bank u = new Bank(accountNumber,balance,name,phoneNo);
+		 
+	 }
+	
+	
+}

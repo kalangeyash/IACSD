@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="com.accounts.SavingAccount"/>
+    <fullyQualifiedTypeName name="com.bank.exception.InsufficientBalanceException"/>
 </qualifiedTypeNameHistroy>

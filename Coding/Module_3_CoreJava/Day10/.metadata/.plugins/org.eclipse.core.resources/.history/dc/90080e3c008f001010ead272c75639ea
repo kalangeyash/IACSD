@@ -1,0 +1,11 @@
+package com.stringtest;
+
+public class String {
+
+	public static void main(java.lang.String[] args) {
+		Stringhandle str1="fghniksoijsidj";
+		
+
+	}
+
+}

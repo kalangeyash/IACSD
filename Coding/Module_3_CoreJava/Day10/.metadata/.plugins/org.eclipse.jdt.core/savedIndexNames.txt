@@ -1,0 +1,6 @@
+INDEX VERSION 1.134+D:\Nikhil & Yash\OOP with Java\Day10\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2148806063.index
+2950079345.index
+1728776425.index
+421362709.index
