@@ -1,0 +1,55 @@
+package com.bank.service;
+import com.bank.core.*;
+import com.bank.custom_exception.BankingException;
+import com.banking.validations.BankingValidations;
+
+import java.util.*;
+
+public class BankImplementation implements BankService {
+	
+	List<BankAccount> accounts;
+	
+	public BankImplementation() {
+		// TODO Auto-generated constructor stub
+		this.accounts = new ArrayList<>();
+	}
+
+	@Override
+	public String openAccount(int accountNumber, double balance, String name, String phoneNo, String accType,
+			String dob, double rateOrLimit) throws BankingException {
+		// TODO Auto-generated method stub
+		BankAccount newUser = BankingValidations.validateAllInputs(accountNumber, balance, name, phoneNo, accType, dob, rateOrLimit, accounts);
+		accounts.add(newUser);
+		return "User Creted Successfully";
+	}
+
+	@Override
+	public BankAccount getSummary(int accountNo) throws BankingException {
+		// TODO Auto-generated method stub
+		BankAccount a = new BankAccount(accountNo);
+		int index = accounts.indexOf(a);
+		
+		if(index == -1) {
+			throw new BankingException("Account not found");
+		}
+		BankAccount currentUser = accounts.get(index);
+
+		return currentUser;
+	}
+
+	@Override
+	public void withdraw(int accountNo, double amount) throws BankingException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deposit(int accountNo, double amount) throws BankingException {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+	
+}

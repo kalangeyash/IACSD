@@ -1,0 +1,21 @@
+package com.banking.validations;
+import com.bank.core.*;
+import com.bank.custom_exception.BankingException;
+
+import java.util.*;
+
+public class BankingValidations {
+	
+	public static void checkForDup(int accountNumber, List<BankAccount> accountList) throws BankingException
+	{
+		BankAccount tmp = new BankAccount(accountNumber);
+		if(accountList.contains(tmp))
+		{
+			throw new BankingException("Account Already exists with this account number");
+		}
+		else {
+			
+		}
+		
+	}
+}

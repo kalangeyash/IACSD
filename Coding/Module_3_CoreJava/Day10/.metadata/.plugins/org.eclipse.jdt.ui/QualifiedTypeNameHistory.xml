@@ -2,4 +2,10 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.bank.service.BankINF"/>
     <fullyQualifiedTypeName name="com.bank.service.Bank"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="com.bank.custom_exception.MYBANKException"/>
+    <fullyQualifiedTypeName name="com.bank.custom_exception.BankingException"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.bank.core.BankAccount"/>
+    <fullyQualifiedTypeName name="com.banking.validations.BankingValidations"/>
 </qualifiedTypeNameHistroy>

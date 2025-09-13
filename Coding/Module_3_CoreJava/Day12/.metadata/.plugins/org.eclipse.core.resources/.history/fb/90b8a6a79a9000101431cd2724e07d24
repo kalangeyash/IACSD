@@ -1,0 +1,46 @@
+package com.bank.ui;
+
+import java.util.Scanner;
+
+import com.bank.core.BankAccount;
+import com.bank.service.BankImplementation;
+import com.bank.service.BankService;
+
+public class Client {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try(Scanner sc = new Scanner(System.in)){
+			BankService bankServicer = new BankImplementation();
+			boolean exit = false;
+			System.out.println("Welcome to MyBank\n1.Register User");
+			
+			while(!exit )
+			{
+				try {
+					switch(sc.nextInt()){
+					case 1 :
+						System.out.println("Enter User Details");
+						System.out.println("AccountNumber , Balance , Name, PhoneNo, AccTpe(SAVING/CURRENT) , DOB,Rate of Interest if Saving account or Overdraft Limit if Current account");
+						bankServicer.openAccount(sc.nextInt(), sc.nextDouble(), sc.next(),  sc.next(), sc.next(), sc.next(),sc.nextDouble());
+						break;
+						
+					default:
+						System.out.println("Invalid Choice");
+					}
+
+				}
+				catch(Exception e)
+				{
+					
+				}
+
+			}
+			
+
+		}
+	
+
+	}
+
+}

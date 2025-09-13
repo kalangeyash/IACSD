@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.bank.service.BankService"/>
+    <fullyQualifiedTypeName name="com.bank.service.BankImplementation"/>
+    <fullyQualifiedTypeName name="com.bank.custom_exception.BankingException"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.bank.core.BankAccount"/>
+    <fullyQualifiedTypeName name="com.bank.core.BankAccountTypes"/>
+</qualifiedTypeNameHistroy>

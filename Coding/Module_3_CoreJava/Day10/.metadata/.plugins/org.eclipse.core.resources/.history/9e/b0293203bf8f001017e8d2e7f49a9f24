@@ -1,0 +1,11 @@
+package com.banking.validations;
+import com.bank.core.*;
+import java.util.*;
+
+public class BankingValidations {
+	
+	public static void checkForDup(int accountNumber, List<BankAccount> accountList) 
+	{
+		
+	}
+}

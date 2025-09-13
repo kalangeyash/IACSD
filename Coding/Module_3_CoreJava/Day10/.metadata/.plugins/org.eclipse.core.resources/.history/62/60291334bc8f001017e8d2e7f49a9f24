@@ -1,0 +1,29 @@
+package com.bank.service;
+import com.bank.core.*;
+
+public class BankImplementation implements BankService {
+	private int counter;
+	private BankAccount[] users;
+	
+
+	@Override
+	public String registerUser(int accountNumber, double balance, String name, String phoneNo) {
+		 BankAccount u = new BankAccount(accountNumber,balance,name,phoneNo);
+		 
+		 users[counter] = u;
+		 counter++;
+		 
+		 return "User Registred to bank";
+		
+	 }
+	
+	@Override
+	public void displayAllUsers(BankAccount[] users){
+		for(BankAccount obj : users)
+		{
+			System.out.println(obj);
+		}
+	}
+	
+	
+}

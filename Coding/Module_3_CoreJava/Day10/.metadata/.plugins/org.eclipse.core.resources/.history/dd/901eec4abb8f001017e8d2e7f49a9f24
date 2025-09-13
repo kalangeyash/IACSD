@@ -1,0 +1,46 @@
+package com.bank.core;
+import java.time.LocalDate;
+
+import com.bank.core.*;
+/*
+ Fields: accountNumber (int), balance (double) , customer name (String) , phone number (String)
+ */
+public class Bank {
+	private int accountNumber;
+	private double balance;
+	private String name;
+	private String phoneNo;
+	private BankAccountTypes accType;
+	private LocalDate dob;
+	
+	public Bank(int accountNumber, double balance, String name, String phoneNo,BankAccountTypes accType, LocalDate dob) {
+		super();
+		this.accountNumber = accountNumber;
+		this.balance = balance;
+		this.name = name;
+		this.phoneNo = phoneNo;
+		this.accType = accType;
+		this.dob = dob;
+	}
+	
+	public double withdraw(double amt)
+	{
+		if(balance<amt)
+		{
+			System.out.println("Insufficient Balance");
+			return getBalance();
+		}
+		else {
+			balance -= amt;
+			return getBalance();
+		}
+	}
+
+	public double deposit() {
+		
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+}
