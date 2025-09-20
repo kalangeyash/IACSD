@@ -1,8 +1,6 @@
 
 /*
-3.8 Find any student with GPA above 8
-(Should run as short circuit operation, meaning the moment you come across any student with GPA > 8 , 
-the streams should stop iterating & return the result immediately)
+3.9 Print names of home cities (no dups please !) of all Students 
 */
 package tester;
 import static utils.StudentCollectionUtils.populateMap;
@@ -23,7 +21,7 @@ public class Test10{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Map<String,Student> map = new LinkedHashMap<>(populateMap(populateList())); 
+		Map<String,Student> map = new HashMap<>(populateMap(populateList())); 
 		System.out.println(" First topper with  > 8 ");
 //		System.out.println("Enter subject");
 //		Scanner sc = new Scanner(System.in);
