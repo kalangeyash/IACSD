@@ -12,10 +12,10 @@ public class Test1 {
 		NewThread t3=new NewThread("three");
 		NewThread t4=new NewThread("four");
 		//how many runnable threads ?1
-		t1.start();
-		t2.start();
-		t3.start();
-		t4.start();//how many runnable threads ?5
+//		t1.start();
+//		t2.start();
+//		t3.start();
+//		t4.start();//how many runnable threads ?5
 		for(int i=0;i<10;i++)
 		{
 			System.out.println(Thread.currentThread().getName()+" exec counter # "+i);
