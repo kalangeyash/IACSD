@@ -1,0 +1,57 @@
+package com.cricket.ui;
+
+import java.util.Scanner;
+
+import com.cricket.service.CricketImplementation;
+import com.cricket.service.CricketService;
+
+public class CricketUI {
+
+	public static void main(String[] args) {
+		
+		// TODO Auto-generated method stub
+	
+	
+		try(Scanner sc = new Scanner(System.in))
+		{
+			CricketService service = new CricketImplementation();
+			boolean exit = false;
+
+			while(!exit)
+			{
+				System.out.println("1.Accept minimum 5 Cricketers in the collection.\r\n"
+						+ "\r\n"
+						+ "2.Modify Cricketer's rating\r\n"
+						+ "\r\n"
+						+ "3.Search Cricketer by name\r\n"
+						+ "\r\n"
+						+ "4.Display all Cricketers added in collection.\r\n"
+						+ "\r\n"
+						+ "5.Display All Cricketers in sorted form by rating.\r\n"
+						+ "");
+				System.out.println("Enter choice");
+				int choice = 1;
+				try {
+					switch(choice)
+					{
+					case 1: 
+						System.out.println("Enter 5 cricketers");
+						//String name, int age, String email_id, String phone, int rating
+						service.addCricketer(sc.next() ,sc.nextInt(), sc.next(), sc.next(),sc.nextInt());
+						
+						
+					}
+				}
+				catch(Exception e)
+				{
+					sc.nextLine();
+					System.out.println(e);
+					
+				}
+			}
+		}
+
+
+	}
+
+}

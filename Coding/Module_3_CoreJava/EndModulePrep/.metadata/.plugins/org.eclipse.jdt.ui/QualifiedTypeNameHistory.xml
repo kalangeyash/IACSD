@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.awt.List"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.cricket.service.CricketService"/>
+    <fullyQualifiedTypeName name="com.cricket.service.CricketImplementation"/>
+    <fullyQualifiedTypeName name="com.cricket.validations.CricketValidations"/>
+    <fullyQualifiedTypeName name="com.cricket.core.Cricketer"/>
+    <fullyQualifiedTypeName name="com.cricket.exception.MyCricketException"/>
+</qualifiedTypeNameHistroy>

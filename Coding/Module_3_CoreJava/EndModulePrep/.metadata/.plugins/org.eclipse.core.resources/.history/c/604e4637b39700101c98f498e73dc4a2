@@ -1,0 +1,17 @@
+package com.cricket.service;
+
+import java.util.List;
+
+import com.cricket.core.Cricketer;
+
+public class CricketValidations {
+	pubilc validateCricketer(String name, int age, String email_id,String phone ,int rating)
+	{
+		if(!)
+	}
+	
+	public Cricketer playerExists(String email, List<Cricketer> players)
+	{
+		
+	}
+}
