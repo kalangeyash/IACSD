@@ -88,7 +88,7 @@ public:
     {
         Vehicle::display();
         cout << "\nBattry capacity " << battery_capacity << " Charging time " << charging_time;
-        cout<<endl;
+        cout << endl;
     }
 };
 
@@ -121,7 +121,7 @@ public:
     void display()
     {
         Vehicle::display();
-        cout<<endl;
+        cout << endl;
     }
 };
 
@@ -180,22 +180,40 @@ int main()
                 }
                 break;
 
+                // case 4:
+                //     cout << "\n--- Performing Specific Actions (RTTI) ---\n";
+                //     for (int i = 0; i < idx; i++)
+                //     {
+                //         if (EV *ev = dynamic_cast<EV *>(arr[i]))
+                //         {
+                //             ev->chargeBattery();
+                //         }
+
+                //         else if (
+                //             Diesel *d = dynamic_cast<Diesel *>(arr[i]))
+                //         {
+                //             d->refuelDiesel();
+                //         }
+                //     }
+                //     break;
             case 4:
-                cout << "\n--- Performing Specific Actions (RTTI) ---\n";
+            {
+                cout << "\n--- Performing Specific Actions (RTTI using typeid) ---\n";
                 for (int i = 0; i < idx; i++)
                 {
-                    if (EV *ev = dynamic_cast<EV *>(arr[i]))
+                    if (typeid(*arr[i]) == typeid(EV))
                     {
+                        EV *ev = static_cast<EV *>(arr[i]);
                         ev->chargeBattery();
                     }
-
-                    else if (
-                        Diesel *d = dynamic_cast<Diesel *>(arr[i]))
+                    else if (typeid(*arr[i]) == typeid(Diesel))
                     {
+                        Diesel *d = static_cast<Diesel *>(arr[i]);
                         d->refuelDiesel();
                     }
                 }
                 break;
+            }
             case 0:
                 exit = true;
                 break;
@@ -209,7 +227,7 @@ int main()
             cout << "Error " << e.what() << endl;
         }
     }
-    for(int i =0; i < idx;i++)
+    for (int i = 0; i < idx; i++)
     {
         delete arr[i];
     }

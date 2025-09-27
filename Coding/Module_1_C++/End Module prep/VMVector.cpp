@@ -20,7 +20,22 @@
 
 #include <iostream>
 #include <vector>
+#include<exception>
+
 using namespace std;
+
+class MyVehicleExc : public exception
+{
+    private:
+        string msg;
+    public:
+        MyVehicleExc(const string& message) : msg(message)
+        {
+
+        }
+
+        const char* what() const noexcept override{}
+}
 
 class Vehicle
 {
@@ -41,7 +56,7 @@ public:
         this->vehicle_type = vehicle_type;
     }
 
-    virtual void accept()
+    virtual void accept() 
     {
         cout << "Enter vid";
         cin >> vehicle_id;
@@ -85,7 +100,7 @@ public:
         cout << "\tIn EV accpt\nEnter battery capacity and charging time";
         cin >> battery_capacity >> charging_time;
     }
-    void display()
+    void display() 
     {
         Vehicle::display();
         cout << "\nBattry capacity " << battery_capacity << " Charging time " << charging_time<<endl;
@@ -196,7 +211,7 @@ int main()
                 break;}
 
             default:
-{                cout<<"Invalid choice!\n";}
+{                throw
             };
         }
         catch (overflow_error &e)
