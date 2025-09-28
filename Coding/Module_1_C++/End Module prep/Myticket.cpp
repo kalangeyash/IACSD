@@ -265,7 +265,7 @@
 				{
 					Bus_Ticket *b = new Bus_Ticket();
 					b->accept();
-					// b->calc_fare();
+					b->calc_fare();
 					arr.push_back(b);
 					break;
 				}
