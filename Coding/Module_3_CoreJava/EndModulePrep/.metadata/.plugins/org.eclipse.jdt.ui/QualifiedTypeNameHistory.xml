@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="java.awt.List"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -10,4 +9,9 @@
     <fullyQualifiedTypeName name="com.cricket.validations.CricketValidations"/>
     <fullyQualifiedTypeName name="com.cricket.core.Cricketer"/>
     <fullyQualifiedTypeName name="com.cricket.exception.MyCricketException"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="com.task.service.TaskService"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="com.task.core.TaskStatus"/>
+    <fullyQualifiedTypeName name="com.task.core.TaskManager"/>
 </qualifiedTypeNameHistroy>
