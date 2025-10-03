@@ -26,6 +26,7 @@ public class TaskValidations {
 		public static TaskStatus validateStatus(String status) throws MyTaskException
 		{
 				try {
+					status.toUpperCase();
 					return TaskStatus.valueOf(status);
 				}catch(Exception e)
 				{
@@ -37,6 +38,7 @@ public class TaskValidations {
 		public static LocalDate validateDate(String taskDate) throws MyTaskException
 		{
 			try {
+				taskDate = taskDate.trim();
 				return LocalDate.parse(taskDate);
 			}catch(Exception e)
 			{
