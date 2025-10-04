@@ -3,15 +3,22 @@
     <fullyQualifiedTypeName name="java.awt.List"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="com.cricket.service.CricketService"/>
     <fullyQualifiedTypeName name="com.cricket.service.CricketImplementation"/>
     <fullyQualifiedTypeName name="com.cricket.validations.CricketValidations"/>
     <fullyQualifiedTypeName name="com.cricket.core.Cricketer"/>
     <fullyQualifiedTypeName name="com.cricket.exception.MyCricketException"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="com.task.service.TaskService"/>
     <fullyQualifiedTypeName name="java.time.LocalDate"/>
-    <fullyQualifiedTypeName name="com.task.core.TaskStatus"/>
+    <fullyQualifiedTypeName name="com.task.validations.TaskValidations"/>
+    <fullyQualifiedTypeName name="jdk.internal.org.jline.reader.ParsedLine"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="com.task.core.TaskManager"/>
+    <fullyQualifiedTypeName name="com.task.core.TaskStatus"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.task.service.TaskService"/>
+    <fullyQualifiedTypeName name="com.task.service.TaskServiceImplementation"/>
+    <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="com.task.exception.MyTaskException"/>
 </qualifiedTypeNameHistroy>

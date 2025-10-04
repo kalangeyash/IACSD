@@ -1,0 +1,147 @@
+operators in mogodb
+$lt, $gt, $gte, $lte, $in, $nin, $mod, $size, $type, 
+$exists, $elemMatch, $or, $and,$expr,$year,$month
+
+
+
+
+----to find all movies with name='3 idiot'
+db.movie.find({name:'3 idiots'},{name:1,price:1,actor:1,_id:0})
+
+----to find all movies withe rating 3
+db.movie.find({rating:3})
+
+---to find all movies with ticket_no=300
+db.movie.find({ticket_no:300})
+
+
+
+----to find all movies with rating=3 and price=200
+rating:3
+price:200
+db.movie.find({rating:3,price:200},{actor:0,_id:0})
+
+---to find all movies with price>200
+price:{$gt:200}
+db.movie.find({price:{$gt:200}})
+
+---to find all movies with price<=200
+price:{$lte:200}
+db.movie.find({price:{$lte:200}})
+
+---to find all movies with price>200 and rating<4
+price:{$gt:200}
+rating:{$lt:4}
+db.movie.find({price:{$gt:200},rating:{$lt:4}})
+
+$and:[{price:{$gt:200}},{rating:{$lt:4}}]
+db.movie.find({$and:[{price:{$gt:200}},{rating:{$lt:4}}]
+})
+
+
+
+db.movie.find({$and:[{price:{$gt:200}},{rating:{$lt:4}}]})
+
+
+---to find all movies with price>200 or rating<4
+price:{$gt:200}
+rating:{$lt:4}
+$or:[{price:{$gt:200}},{rating:{$lt:4}}]
+db.movie.find({$or:[{price:{$gt:200}},{rating:{$lt:4}}]})
+
+------to find all movies with rating >4 and ticket_no>200
+rating:{$gt:4}
+ticket_no:{$gt:200}
+db.movie.find({rating:{$gt:4},ticket_no:{$gt:200}})
+------to find all movies with rating >4 or ticket_no>200
+rating:{$gt:4}
+ticket_no:{$gt:200}
+$or:[{rating:{$gt:4}},{ticket_no:{$gt:200}}]
+db.movie.find({$or:[{rating:{$gt:4}},{ticket_no:{$gt:200}}]})
+
+
+---to display all movies with price >200 and <400
+price:{$gt:200,$lt:400}
+
+db.movie.find({price:{$gt:200,$lt:400}})
+
+
+
+---to display all the movies with rating is 
+either 3 or 4 or 5
+rating:{$in:[3,4,5]}
+
+db.movie.find({rating:{$in:[3,4,5]}})
+
+
+---to display all the movies with rating 
+is not  3 or 4 or 5
+db.movie.find({rating:{$nin:[3,4,5]}})
+
+---to display all movies with rating is either 3 or 4 or 5
+and price >200 and <400
+rating:{$in:[3,4,5]}
+price:{$gt:200,$lt:400}
+db.movie.find({rating:{$in:[3,4,5]},price:{$gt:200,$lt:400}})
+
+----to find all movies with even rating
+rating:{$mod:[2,0]} 
+db.movie.find({rating:{$mod:[2,0]}})
+
+----to find all movies with odd rating
+rating:{$mod:[2,1]} 
+db.movie.find({rating:{$mod:[2,1]}})
+
+---to find all movies with rating divisible by 4
+rating:{$mod:[4,0]}
+db.movie.find({rating:{$mod:[4,0]}})
+
+-----to find all movies in which Amitabh has acted
+db.movie.find({actor:'Amitabh'})
+
+-----to find all movies in which Amitabh has acted and 
+is at 0 index
+db.movie.find({'actor.0':'Amitabh'})
+
+-----to find all movies in which Amitabh has acted and 
+is at 1 index
+db.movie.find({'actor.1':'Amitabh'})
+
+
+-----to list all movies in which Amitabh has acted
+db.movie.find({actor:/^[Aa]mitabh/})
+
+-----to list all movies ending with digits
+db.movie.find({name:/[0-9]$/})
+db.movie.find({name:/\d$/})
+
+-----to list all movies starting with digits
+db.movie.find({name:/^[0-9]/})
+db.movie.find({name:/^\d/})
+
+
+-----to list all movies starting with p and ending with a or t
+db.movie.find({name:/^p.*[ta]$/})
+
+----find all movies with actor array size is 3
+db.movie.find({actor:{$size:3}})
+
+----find all movies with rating string
+db.movie.find({rating:{$type:'string'}})
+
+----find all movies with rating in number
+db.movie.find({rating:{$type:'number'}})
+
+-----find all movies with rating is null 
+db.movie.find({rating:null})
+
+-----find all movies with rating is null if rating key exists
+db.movie.find({rating:{$eq:null,$exists:true}})
+
+---list all movies which has lastmodified key available
+db.movie.find({lastmodified:{$exists:true}})
+
+----to find all movies which has lastmodified key and the year is 2025
+db.movie.find({ "$expr": { "$eq": [{ "$year": "$lastmodified" }, 2025] } })
+
+

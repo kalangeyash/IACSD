@@ -17,6 +17,8 @@ public class TaskValidations {
 //			 TaskStatus parsedStatus = TaskStatus.valueOf(status.toUpperCase());
 			TaskStatus parsedStatus =  validateStatus(status);
 			
+			System.out.println("\ntaskName : "+ taskName + "\nTaskDesc : "+description + "\nTask Date: "+ parsedDate +"\nStatus : "+ parsedStatus);
+			
 			
 			
 			return new TaskManager(taskName, description, parsedDate, parsedStatus);
@@ -28,9 +30,10 @@ public class TaskValidations {
 				try {
 					status.toUpperCase();
 					return TaskStatus.valueOf(status);
+					
 				}catch(Exception e)
 				{
-					throw new  MyTaskException("[MyTaskException ] : Please enter valid status ...");
+					throw new  MyTaskException("[MyTaskException ] : Please enter valid status ..."+status+" <- This is  ");
 				}
 			
 		}
@@ -42,7 +45,7 @@ public class TaskValidations {
 				return LocalDate.parse(taskDate);
 			}catch(Exception e)
 			{
-				throw new MyTaskException("[MyTaskException ] : Please enter valid Date ...");
+				throw new MyTaskException("[MyTaskException ] : Please enter valid Date ..." + taskDate);
 			}
 		}
 }

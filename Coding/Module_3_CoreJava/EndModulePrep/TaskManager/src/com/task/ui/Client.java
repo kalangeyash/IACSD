@@ -28,16 +28,24 @@ public class Client {
 				System.out.println("\t\t\tEnter choice\n");
 				
 				try {
-					int choice = sc.nextInt();
-					switch(choice)
+//			
+					switch(sc.nextInt())
 						{
 						case 1:
-						    System.out.println("Enter task details: taskName, description, taskDate, status");
-						 
-						    String taskName = sc.next();
-						    String description = sc.next();
-						    String taskDate = sc.next().trim(); // remove spaces/newlines
-						    String status = sc.next().trim();
+							sc.nextLine();
+							
+						    System.out.println( " taskName ");
+						    String taskName = sc.nextLine();
+						    System.out.println( " description");
+						    String description = sc.nextLine();
+						    System.out.println(" taskDate : ");
+						    String taskDate = sc.nextLine();
+						    System.out.println("status : ");
+						    String status = sc.nextLine();// remove spaces/newlines
+						    
+
+
+
 	
 						    String s = service.addNewTask(taskName, description, taskDate, status);
 					    System.out.println("[Status] : " + s);
@@ -54,7 +62,6 @@ public class Client {
 					
 				}catch(Exception e)
 				{
-					sc.nextLine();
 					System.out.println(e);
 				}
 			}
