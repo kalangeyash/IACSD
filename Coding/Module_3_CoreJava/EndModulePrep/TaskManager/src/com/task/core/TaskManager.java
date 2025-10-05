@@ -24,29 +24,29 @@ f.  Display all tasks sorted by taskDate          
 
 import java.time.LocalDate;
 
-public class TaskManager {
-
-	private static int taskIdCounter;
-	private int taskId;
-	private String taskName;
-	private  String description;
-	private LocalDate  taskDate;
-	private TaskStatus status;
-	private boolean active;
+	public class TaskManager {
 	
-	static
-	{
-		taskIdCounter = 1001;
-	}
-	
-	public TaskManager(String taskName, String description, LocalDate taskDate, TaskStatus status) {
-		this.taskId = taskIdCounter++;
-		this.taskName = taskName;
-		this.description = description;
-		this.taskDate = taskDate;
-		this.status = status;
-		this.active = false;
-	}
+		private static int taskIdCounter;
+		private int taskId;
+		private String taskName;
+		private  String description;
+		private LocalDate  taskDate;
+		private TaskStatus status;
+		private boolean active;
+		
+		static
+		{
+			taskIdCounter = 1001;
+		}
+		
+		public TaskManager(String taskName, String description, LocalDate taskDate, TaskStatus status) {
+			this.taskId = taskIdCounter++;
+			this.taskName = taskName;
+			this.description = description;
+			this.taskDate = taskDate;
+			this.status = status;
+			this.active = false;
+		}
 	@Override
 	public String toString() {
 		return "TaskManager [taskId=" + taskId + ", taskName=" + taskName + ", description=" + description

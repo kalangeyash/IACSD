@@ -59,11 +59,17 @@ public class TaskServiceImplementation implements TaskService {
 	}
 
 	@Override
-	public String updateTask(int taskId)
+	public String updateTaskStatus(int taskId)
 //			throws MyTaskException 
 	{
+		TaskManager  t = map.get(taskId);
+		System.out.println("Task status before changing :\t"+ t.getStatus());
+		t.setStatus(TaskStatus.COMPLETED);
+		System.out.println("\nTask status AFTER changing :\t"+ t.getStatus());
+		
+		
 		// TODO Auto-generated method stub
-		return "";
+		return "\nTask Updated successfully ";
 	}
 
 	@Override

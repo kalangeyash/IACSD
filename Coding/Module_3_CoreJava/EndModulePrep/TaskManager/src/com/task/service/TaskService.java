@@ -19,7 +19,7 @@ public interface TaskService {
 		
 		String deleteTask(int taskId)throws MyTaskException;
 		
-		String updateTask(int taskId)throws MyTaskException;
+		String updateTaskStatus(int taskId)throws MyTaskException;
 		
 		void displayAllTask();
 		
