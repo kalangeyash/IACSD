@@ -1,1 +1,18 @@
 Coding/Module_3_CoreJava/Drive Material/
+# Ignore all compiled Java class files
+*.class
+
+# Ignore common build directories
+/bin/
+/target/
+/out/
+/build/
+
+/# IDE specific files
+*.log
+*.iml
+.idea/
+.vscode/
+.project
+.classpath
+.settings/
