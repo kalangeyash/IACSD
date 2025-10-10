@@ -101,12 +101,222 @@ delimiter ;
 -- department. Display an error message Emp table is empty if there is no matching
 -- Record.
 delimiter //
-create procedure displayWRTaverage()
+create procedure EmpStatus2()
 begin
-declare vAvg sal int default 0;
-select avg(sal) into vAvg from emp;
-if vAvg > sal  then
+declare vEmpno,vDeptno int default 0;
+declare vEname,vJob varchar(30) default '';
+declare vSal double (9,2) default  0;
+declare vSet int default 0;
+declare vAvgSal double(9,2);
+DECLARE vStatus VARCHAR(10) DEFAULT '';
+
+
+declare EMPCUR CURSOR for 
+	select empno,ename,job,sal,deptno from emp;
+
+declare CONTINUE HANDLER for NOT FOUND 
+set vSet  = 1;
+
+open EMPCUR;
+
+label1: loop
+fetch EMPCUR into vEmpno,vEname,vJob,vSal,vDeptno ;
+if vset = 1 then
+	leave label1;
+end if;
+
+select avg(sal) into vAvgSal from emp
+where deptno = vDeptno; 
+
+
+if vSal > vAvgSal then
+set vStatus = 'Greater';
+elseif vSal < vAvgSal then 
+set vStatus = 'Lesser';
+else
+set vStatus = 'Equal';
+end if;
+
+
+-- Display
+select vEmpno,vEname,vJob,vSal,vDeptno,vStatus;
+end loop label1;
+
+
+
+close EMPCUR;
+
+end//
+
+delimiter ;
+-- _____________________
+9. Write a procedure to update salary in emp table based on following rules.
+Exp< =35 then no Update
+Exp> 35 and <=38 then 20% of salary
+Exp> 38 then 25% of salary
+
+
+delimiter //
+create procedure upSalByExy()
+begin
+declare vSal double(9,2) default 0;
+declare vExpY,vEmpno int default 0;
+declare vSet int default 0;
+
+declare EMPCUR CURSOR for 
+select sal,timestampdiff(year,hiredate,curdate()),empno from emp;
+
+declare CONTINUE HANDLER for NOT FOUND set vSet = 1;
+
+open EMPCUR;
+
+label1: loop
+fetch EMPCUR into vSal,vExpY,vEmpno;
+
+if vSet = 1 then
+	leave label1;
+end if;
+
+if vExpY >35 and vExpY<38 then
+update emp
+set sal = vsal * 1.20
+where empno = vEmpno;
+
+elseif vExpy >38 then
+update emp
+set sal = vsal * 1.25
+where empno = vEmpno;
+
+end if;
+
+
+end loop label1;
+
+close EMPCUR;
+
+end // 
+
+-- _____________________
+11. Write a function to compute the following. Function should take sal and hiredate
+as i/p and return the cost to company.
+
+DA = 15% Salary, HRA= 20% of Salary, TA= 8% of Salary.
+Special Allowance will be decided based on the service in the company.
+< 1 Year Nil
+>=1 Year< 2 Year 10% of Salary
+>=2 Year< 4 Year 20% of Salary
+>4 Year 30% of Salary
+
+delimiter //
+create function computeCTC(in pSal double(9,2),in pHiredate date)
+returns double(9,2)
+DETERMINISTIC
+begin
+declare vCTC double(9,2) default 0;
+declare vExp int default 0 ;
+
+
+    DECLARE vDA DOUBLE(9,2);
+    DECLARE vHRA DOUBLE(9,2);
+    DECLARE vTA DOUBLE(9,2);
+    DECLARE vSpecial DOUBLE(9,2);
+
+
+
+    -- Basic components
+    SET vDA = 0.15 * pSal;
+    SET vHRA = 0.20 * pSal;
+    SET vTA = 0.08 * pSal;
+
+
+set vExp =  timestampdiff(year,pHiredate,curdate());
+
+--set vCTC = vCTC * 1.15 * 1.20 * 1.08; //this is wrong
+
+if vExp < 1 then 
+set vSpecial = 0;
+elseif vExp >= 1 and vExp<2 then
+set vSpecial = 0.10* pSal;
+elseif vExp >=2 and vExp<4 then
+set vSpecial =0.20* pSal;
+else
+set vSpecial = 0.30 * pSal;
+end if;
+
+-- Compute total CTC
+
+set vCTC = pSal + vHRA + vDA + vTA +vSpecial;
+return vCTC;
+
+end // 
+delimiter ;
+
+----------------------
+
+
+ Write a procedure and a function.
+Function: write a function to calculate number of years of experience of employee.(note:
+pass hiredate as a parameter)
+
+Procedure: Capture the value returned by the above function to calculate the additional
+allowance for the emp based on the experience.
+Additional Allowance = Year of experience x 3000
+Calculate the additional allowance
+and store Empno, ename,Date of Joining, and Experience in
+years and additional allowance in Emp_Allowance table.
+
+create table emp_allowance(
+empno int,
+ename varchar(20),
+hiredate date,
+experience int,
+allowance decimal(9,2));
+
+delimiter //
+create function calExpYear(pHiredate date)
+returns int
+begin
+declare vExp int default 0;
+
+set vExp = timestampdiff(year,pHiredate,curdate());
+
+return vExp;
+end//
+
+create procedure calAllw()
+begin
+declare vset int default 0;
+declare vExpYear,vEmpno int default 0;
+declare vEname varchar(30) default '';
+declare vHiredate date;
+declare vAdditionalAllowance double(9,2) default 0;
+
+declare EMPCUR CURSOR for 
+    select empno,ename,hiredate from emp;
+declare Continue handler for Not FOUND set vset  = 1 ;
+
+open EMPCUR;
+
+label1: loop
+fetch empcur into vEmpno,vEname,vHiredate;
+if vset = 1 then
+    leave label1;
+end if;
+
+set vExpYear = calExpYear(vHiredate);
+set vAdditionalAllowance = vExpYear * 3000;
+
+insert into emp_allowance(empno,ename,hiredate,experience,allowance)
+values(vEmpno,vEname,vHiredate,vExpYear,vAdditionalAllowance);
+
+end loop label1;
+
+close EMPCUR;
 
 end //
+
 delimiter ;
+
+
+
 
