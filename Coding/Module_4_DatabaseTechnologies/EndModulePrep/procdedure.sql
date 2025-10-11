@@ -316,7 +316,3 @@ close EMPCUR;
 end //
 
 delimiter ;
-
-
-
-
