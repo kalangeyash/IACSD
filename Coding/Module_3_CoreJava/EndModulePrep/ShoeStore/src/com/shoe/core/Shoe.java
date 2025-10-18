@@ -1,4 +1,4 @@
-package com.shoe.core;
+=package com.shoe.core;
 /*Shoe Gallery Details: Shoe_Id (int) (unique should be generate automatically),
  * Name (String), Brand (String), ratings (int) (scale between 1 to 10), Price (double), availablelnGallery(boolean: True/False),
 Shoe_type: (enum)[FORMAL, CASUAL,SPORTS]
